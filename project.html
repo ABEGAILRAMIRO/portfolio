@@ -4,42 +4,40 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Creative Works – Services</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
+    <title>Projects – Abegail E. Ramiro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
     <style>
         *,
         *::before,
         *::after {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+        }
+
+        :root {
+            --sky: #FD6F00;
+            --dark: #0a0e2c;
+            --text: #0a0e2c;
+            --muted: #6b7280;
+            --bg: #ffffff;
+            --placeholder: #d9d9d9;
         }
 
         html {
             scroll-behavior: smooth;
         }
 
-        html,
         body {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: #fff;
-            color: #2c3a50;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: var(--text);
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* ── NAV ── */
+        /* NAV */
         nav {
             display: flex;
             align-items: center;
@@ -47,14 +45,8 @@
             padding: 22px 64px;
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(10px);
+            background: #ffffff;
             z-index: 100;
-            border-bottom: 1px solid rgba(78, 201, 225, 0.12);
-        }
-
-        nav.scrolled {
-            box-shadow: 0 2px 20px rgba(0, 0, 0, .06);
         }
 
         .logo {
@@ -65,29 +57,9 @@
         }
 
         .logo-icon {
-            width: 46px;
-            height: 46px;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.1;
-        }
-
-        .logo-text span:first-child {
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            color: #1a1a2e;
-        }
-
-        .logo-text span:last-child {
-            font-size: 8px;
-            letter-spacing: 2.5px;
-            color: #6b7280;
-            text-transform: uppercase;
+            height: 72px;
+            width: auto;
+            object-fit: contain;
         }
 
         .hamburger {
@@ -102,7 +74,7 @@
             display: block;
             width: 24px;
             height: 2px;
-            background: #1a1a2e;
+            background: var(--dark);
             border-radius: 2px;
         }
 
@@ -114,17 +86,16 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #2d2d2d;
+            color: var(--text);
             font-size: 15px;
             font-weight: 500;
             position: relative;
             padding-bottom: 4px;
-            transition: color 0.2s;
         }
 
         .nav-links a.active,
         .nav-links a:hover {
-            color: #74ccff;
+            color: var(--sky);
         }
 
         .nav-links a.active::after {
@@ -134,255 +105,121 @@
             left: 0;
             right: 0;
             height: 2px;
-            background: #74ccff;
+            background: var(--sky);
             border-radius: 2px;
         }
 
-        /* ── PAGE HERO ── */
-        .page-hero {
-            padding: 60px 60px 30px;
-            text-align: center;
-        }
-
-        .page-hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.2rem, 5vw, 3.4rem);
-            font-weight: 900;
-            color: #1a2b4a;
-            margin-bottom: 20px;
-            line-height: 1.15;
-        }
-
-        .page-hero p {
-            font-size: 1rem;
-            color: #8fa3b1;
-            max-width: 600px;
+        /* PAGE */
+        .projects-page {
+            padding: 60px 64px 100px;
+            max-width: 1400px;
             margin: 0 auto;
-            line-height: 1.88;
         }
 
-        /* ── PORTFOLIO ── */
-        .portfolio-section {
-            padding: 0 0 100px;
-            flex: 1;
+        /* CATEGORY */
+        .project-category {
+            margin-bottom: 64px;
         }
 
-        .portfolio-tabs {
+        .category-header {
             display: flex;
-            border-bottom: 1.5px solid #e8e8e8;
-            padding: 0 60px;
-            margin-top: 16px;
-            overflow-x: auto;
-            scrollbar-width: none;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 28px;
         }
 
-        .portfolio-tabs::-webkit-scrollbar {
-            display: none;
+        .category-heading {
+            max-width: 900px;
         }
 
-        .ptab {
-            padding: 16px 32px;
-            font-size: .93rem;
-            font-weight: 400;
-            color: #aaa;
-            cursor: pointer;
-            border: none;
-            background: none;
-            font-family: 'DM Sans', sans-serif;
-            white-space: nowrap;
-            position: relative;
-            border-bottom: 2.5px solid transparent;
-            margin-bottom: -1.5px;
-            transition: color .2s;
-        }
-
-        .ptab:first-child {
-            padding-left: 0;
-        }
-
-        .ptab:hover {
-            color: #1a2b4a;
-        }
-
-        .ptab.active {
-            color: #1a2b4a;
+        .category-title {
+            font-size: 30px;
             font-weight: 700;
-            border-bottom-color: #1a2b4a;
+            color: var(--dark);
+            margin-bottom: 14px;
         }
 
-        .portfolio-panel {
-            display: none;
-            padding: 60px 60px 0;
+        .category-desc {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text);
         }
 
-        .portfolio-panel.active {
-            display: block;
-            animation: fadeIn .3s ease both;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ── CIRCLE GRID ── */
-        .circle-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 28px 24px;
-            justify-items: center;
-        }
-
-        .circle-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 14px;
-            cursor: pointer;
-        }
-
-        .circle-ring {
-            padding: 3px;
-            border-radius: 50%;
-            background: #e3eaf2;
-            transition: background .35s ease, transform .3s ease, box-shadow .3s ease;
+        .view-all {
             flex-shrink: 0;
-        }
-
-        .circle-item:hover .circle-ring {
-            background: linear-gradient(135deg, #3ab4f2 0%, #7dd6f7 50%, #1a2b4a 100%);
-            transform: scale(1.05);
-            box-shadow: 0 8px 32px rgba(58, 180, 242, .28);
-        }
-
-        .circle-wrap {
-            width: 156px;
-            height: 156px;
-            border-radius: 50%;
-            background: #d9d9d9;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            outline: 3px solid #fff;
-        }
-
-        .circle-wrap::after {
-            content: 'View Sample';
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            background: rgba(26, 43, 74, .55);
-            color: #fff;
-            font-size: .78rem;
+            color: var(--sky);
+            font-size: 15px;
             font-weight: 600;
-            letter-spacing: .08em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity .25s;
-            pointer-events: none;
+            text-decoration: underline;
+            white-space: nowrap;
+            margin-top: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .circle-item:hover .circle-wrap::after {
-            opacity: 1;
+        .view-all:hover {
+            opacity: .8;
         }
 
-        .circle-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .circle-art {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-        }
-
-        .circle-art .emoji {
-            font-size: 2.2rem;
-        }
-
-        .circle-art .sublabel {
-            font-size: .55rem;
-            font-weight: 700;
-            letter-spacing: .08em;
-        }
-
-        .circle-label {
-            font-size: .82rem;
-            color: #5a6a7a;
-            text-align: center;
-            line-height: 1.4;
-            font-weight: 500;
-            transition: color .25s;
-        }
-
-        .circle-item:hover .circle-label {
-            color: #3ab4f2;
-        }
-
-        /* ── CARD GRID ── */
-        .card-grid {
+        /* GRID */
+        .project-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 28px 24px;
-            justify-items: center;
         }
 
-        .card-item {
+        .project-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 14px;
-            cursor: pointer;
+            gap: 12px;
             width: 100%;
         }
 
-        .card-wrap {
+        .project-item.extra-item {
+            display: none;
+        }
+
+        .project-grid.show-all .project-item.extra-item {
+            display: flex;
+        }
+
+        /* THUMB — same sizing behavior as before: width 100%, height follows image */
+        .project-thumb {
+            position: relative;
             width: 100%;
             border-radius: 12px;
-            background: #e8edf2;
             overflow: hidden;
-            position: relative;
+            background: var(--placeholder);
+        }
+
+        .project-thumb.clickable {
+            cursor: pointer;
             border: 2px solid #e3eaf2;
             transition: border-color .35s ease, transform .3s ease, box-shadow .3s ease;
         }
 
-        .card-wrap img {
+        .project-thumb.clickable img {
             width: 100%;
             height: auto;
             display: block;
             object-fit: contain;
         }
 
-        .card-item:hover .card-wrap {
-            border-color: #3ab4f2;
+        .project-thumb.clickable:hover {
+            border-color: var(--sky);
             transform: scale(1.03);
-            box-shadow: 0 8px 32px rgba(58, 180, 242, .22);
+            box-shadow: 0 8px 32px rgba(253, 111, 0, .22);
         }
 
-        .card-wrap::after {
+        .project-thumb.clickable::before {
             content: 'View Sample';
             position: absolute;
             inset: 0;
-            background: rgba(26, 43, 74, .48);
+            background: rgba(10, 14, 44, .48);
             color: #fff;
             font-size: .78rem;
             font-weight: 600;
@@ -394,59 +231,56 @@
             transition: opacity .25s;
             pointer-events: none;
             border-radius: 10px;
+            z-index: 3;
         }
 
-        .card-item:hover .card-wrap::after {
+        .project-thumb.clickable:hover::before {
             opacity: 1;
         }
 
-        .card-label {
-            font-size: .82rem;
-            color: #5a6a7a;
-            text-align: center;
-            line-height: 1.4;
-            font-weight: 500;
-            transition: color .25s;
-        }
-
-        .card-item:hover .card-label {
-            color: #3ab4f2;
-        }
-
-        .card-desc {
-            font-size: .75rem;
-            color: #9aaab8;
-            text-align: center;
-            line-height: 1.55;
-            font-weight: 400;
-            max-width: 200px;
-            margin-top: -8px;
-        }
-
-        .card-placeholder {
-            width: 100%;
-            aspect-ratio: 4/3;
-            background: #e8edf2;
+        .project-thumb.empty {
+            aspect-ratio: 1 / 1;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 8px;
         }
 
-        /* ── PPT CARD ── */
-        .ppt-card {
-            position: relative;
-            overflow: hidden;
+        .project-thumb.empty::after {
+            content: 'Coming Soon';
+            font-size: 13px;
+            font-weight: 500;
+            color: #a3a3a3;
         }
 
-        .ppt-thumb-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain;
+        .project-caption {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text);
+            text-align: center;
         }
 
+        .project-desc {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--muted);
+            text-align: center;
+            line-height: 1.5;
+            margin-top: -4px;
+        }
+
+        .project-link {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--sky);
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* PPT / carousel thumb */
         .ppt-thumb-dots {
             position: absolute;
             bottom: 8px;
@@ -468,7 +302,7 @@
         }
 
         .ppt-thumb-dot.active {
-            background: #3ab4f2;
+            background: var(--sky);
             width: 14px;
             border-radius: 3px;
         }
@@ -649,15 +483,23 @@
             padding: 4px 14px;
             border-radius: 20px;
             letter-spacing: .08em;
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
             pointer-events: none;
             animation: swipeHintFade 3s ease-in-out 1s forwards;
         }
 
         @keyframes swipeHintFade {
-            0% { opacity: 1; }
-            70% { opacity: 1; }
-            100% { opacity: 0; }
+            0% {
+                opacity: 1;
+            }
+
+            70% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
         }
 
         .ss-paused-badge {
@@ -670,22 +512,41 @@
             background: rgba(0, 0, 0, .5);
             padding: 3px 10px;
             border-radius: 20px;
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
             pointer-events: none;
         }
 
         @keyframes slideInRight {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
 
         @keyframes slideInLeft {
-            from { transform: translateX(-100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
 
-        .ss-slide-enter-right { animation: slideInRight .42s cubic-bezier(.25, .8, .25, 1) forwards; }
-        .ss-slide-enter-left { animation: slideInLeft .42s cubic-bezier(.25, .8, .25, 1) forwards; }
+        .ss-slide-enter-right {
+            animation: slideInRight .42s cubic-bezier(.25, .8, .25, 1) forwards;
+        }
+
+        .ss-slide-enter-left {
+            animation: slideInLeft .42s cubic-bezier(.25, .8, .25, 1) forwards;
+        }
 
         .slidestrip-counter {
             position: absolute;
@@ -696,7 +557,7 @@
             background: rgba(0, 0, 0, .45);
             padding: 3px 9px;
             border-radius: 20px;
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         .slidestrip-thumbs {
@@ -708,8 +569,14 @@
             scrollbar-color: rgba(255, 255, 255, .2) transparent;
         }
 
-        .slidestrip-thumbs::-webkit-scrollbar { height: 4px; }
-        .slidestrip-thumbs::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, .25); border-radius: 4px; }
+        .slidestrip-thumbs::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .slidestrip-thumbs::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, .25);
+            border-radius: 4px;
+        }
 
         .ss-thumb {
             flex-shrink: 0;
@@ -724,9 +591,22 @@
             opacity: .5;
         }
 
-        .ss-thumb:hover { opacity: .85; transform: translateY(-2px); }
-        .ss-thumb.active { border-color: #3ab4f2; opacity: 1; }
-        .ss-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .ss-thumb:hover {
+            opacity: .85;
+            transform: translateY(-2px);
+        }
+
+        .ss-thumb.active {
+            border-color: var(--sky);
+            opacity: 1;
+        }
+
+        .ss-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
         .ss-arrow {
             position: absolute;
@@ -752,14 +632,19 @@
         }
 
         .ss-arrow:hover {
-            background: rgba(58, 180, 242, .35);
-            border-color: #3ab4f2;
+            background: rgba(253, 111, 0, .35);
+            border-color: var(--sky);
             opacity: 1;
             transform: translateY(-50%) scale(1.08);
         }
 
-        .ss-arrow-prev { left: 12px; }
-        .ss-arrow-next { right: 12px; }
+        .ss-arrow-prev {
+            left: 12px;
+        }
+
+        .ss-arrow-next {
+            right: 12px;
+        }
 
         .ss-dots {
             display: flex;
@@ -780,84 +665,41 @@
             flex-shrink: 0;
         }
 
-        .ss-dot:hover { background: rgba(58, 180, 242, .55); border-color: #3ab4f2; }
-        .ss-dot.active { background: #3ab4f2; border-color: #3ab4f2; width: 22px; border-radius: 4px; }
-
-        /* ── TOOLS GRID ── */
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 16px;
-            padding: 8px 0 0;
+        .ss-dot:hover {
+            background: rgba(253, 111, 0, .55);
+            border-color: var(--sky);
         }
 
-        .tool-card {
-            background: #fff;
-            border: 1px solid #edf2f8;
-            border-radius: 18px;
-            padding: 22px 12px 18px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 3px 16px rgba(26, 43, 74, .06);
-            transition: transform .22s ease, box-shadow .22s ease;
-            cursor: default;
+        .ss-dot.active {
+            background: var(--sky);
+            border-color: var(--sky);
+            width: 22px;
+            border-radius: 4px;
         }
-
-        .tool-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(58, 180, 242, .13); }
-
-        .tool-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-        }
-
-        .tool-name { font-size: .72rem; font-weight: 700; color: #1a2b4a; text-align: center; line-height: 1.3; }
-        .tool-type { font-size: .62rem; color: #8fa3b1; font-weight: 500; text-align: center; }
 
         /* ── VIEW WEBSITE BUTTON ── */
         .view-website-btn {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 9px 22px;
-            border-radius: 8px;
-            background: #1a2b4a;
-            color: #fff;
-            font-size: .84rem;
+            font-size: 12px;
             font-weight: 600;
+            color: var(--sky);
             text-decoration: none;
-            letter-spacing: .04em;
-            margin-top: 4px;
-            transition: background .2s, transform .2s, box-shadow .2s;
-            font-family: 'DM Sans', sans-serif;
         }
 
         .view-website-btn:hover {
-            background: #3ab4f2;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(58, 180, 242, .35);
+            text-decoration: underline;
         }
 
-        /* ── FOOTER ── */
-        footer {
-            background: #1a2b4a;
-            color: rgba(255, 255, 255, .42);
-            text-align: center;
-            padding: 26px 60px;
-            font-size: .8rem;
-            letter-spacing: .04em;
-        }
-
-        footer span { color: #3ab4f2; }
-
-        /* ── RESPONSIVE ── */
+        /* RESPONSIVE */
         @media (max-width: 900px) {
+            .project-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
             nav {
                 padding: 16px 24px;
             }
@@ -875,7 +717,7 @@
                 left: 0;
                 right: 0;
                 background: #fff;
-                border-bottom: 1px solid rgba(78, 201, 225, 0.15);
+                border-bottom: 1px solid rgba(253, 111, 0, 0.15);
                 padding: 8px 0;
                 z-index: 200;
             }
@@ -889,481 +731,656 @@
                 padding: 12px 24px;
             }
 
-            .page-hero {
-                padding: 40px 24px 48px;
+            .projects-page {
+                padding: 40px 24px 60px;
             }
 
-            .portfolio-tabs {
-                padding: 0 24px;
+            .category-header {
+                flex-direction: column;
             }
 
-            .portfolio-panel {
-                padding: 44px 24px 0;
-            }
-
-            .circle-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 22px;
-                justify-items: center;
-            }
-
-            .card-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .tools-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .category-title {
+                font-size: 24px;
             }
         }
 
         @media (max-width: 480px) {
-            nav {
-                padding: 16px 20px;
-            }
-
-            .ptab {
-                padding: 13px 16px;
-                font-size: .82rem;
-            }
-
-            .circle-grid {
+            .project-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 16px;
-                justify-items: center;
+                gap: 20px 16px;
             }
 
-            .circle-wrap {
-                width: 130px;
-                height: 130px;
-            }
-
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .tools-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
-
-            .tool-card {
-                padding: 18px 10px 14px;
-            }
-
-            .tool-icon {
-                width: 44px;
-                height: 44px;
-                font-size: 1.35rem;
-            }
-
-            .mobile-nav ul li a {
-                font-size: 1.25rem;
+            .projects-page {
+                padding: 28px 16px 48px;
             }
         }
-        footer { background: #4a4f56; padding: 26px 64px; text-align: center; }
-    .footer-text { font-size: 15px; color: #cdd1d6; letter-spacing: 0.2px; }
-    .footer-text a { color:  #74ccff; text-decoration: none; font-weight: 700; }
-    .footer-text a:hover { color: #74ccff; }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            padding: 56px 64px 26px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .footer-heading {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--sky);
+        }
+
+        .footer-logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #d7dae4;
+            font-size: 14px;
+        }
+
+        .footer-contact-item svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--sky);
+            flex-shrink: 0;
+        }
+
+        a.footer-contact-item:hover {
+            color: var(--sky);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #d7dae4;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover,
+        .footer-links a.active {
+            color: var(--sky);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 14px;
+        }
+
+        .footer-social a {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: #d7dae4;
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: var(--sky);
+            color: #fff;
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 22px;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: #9aa0b4;
+            letter-spacing: 0.2px;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 40px 24px 22px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 28px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- ── NAVBAR ── -->
-    <nav id="navbar">
+    <nav>
         <a href="index.html" class="logo">
-            <svg class="logo-icon" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="13" cy="13" r="11" fill="#4EC9E1" opacity="0.85" />
-                <circle cx="33" cy="13" r="11" fill="#74D9ED" opacity="0.7" />
-                <circle cx="13" cy="33" r="11" fill="#74D9ED" opacity="0.7" />
-                <circle cx="33" cy="33" r="11" fill="#4EC9E1" opacity="0.85" />
-            </svg>
-            <div class="logo-text">
-                <span>PIXORA</span>
-                <span>Design · Code · Create</span>
-            </div>
+            <img src="main_logo.jpg" alt="Abby Logo" class="logo-icon">
         </a>
 
         <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </div>
 
         <ul class="nav-links" id="navMenu">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Me</a></li>
-            <li><a href="certificates.html">Certificates</a></li>
-            <li><a href="services.html">Services</a></li>
+            <li><a href="services.html">Tools</a></li>
             <li><a href="project.html" class="active">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- ── PAGE HERO ── -->
-    <div class="page-hero">
-        <h1>Simple Creative Works</h1>
-        <p>
-            I create clean and modern digital designs that help turn ideas into simple, functional,
-            and visually appealing results. From design to development, we focus on clarity, creativity,
-            and user-friendly output.
-        </p>
+    <div class="projects-page">
+
+        <!-- SOCIAL MEDIA MANAGEMENT -->
+        <div class="project-category">
+            <div class="category-header">
+                <div class="category-heading">
+                    <h2 class="category-title">Social Media Management</h2>
+                    <p class="category-desc">Social media content and promotional materials created to support brand
+                        visibility, engagement, and consistent online presence.</p>
+                </div>
+                <button class="view-all" onclick="toggleViewAll(this)">View all</button>
+            </div>
+            <div class="project-grid">
+
+                <div class="project-item ppt-item" data-slides='["smm1_1.jpg","smm1_2.jpg"]'>
+                    <div class="project-thumb clickable">
+                        <img class="ppt-thumb-img" src="smm1_1.jpg" alt="Sample Content Calendar"
+                            style="opacity:1;transition:opacity .4s ease;">
+                        <div class="ppt-thumb-dots"></div>
+                    </div>
+                    <span class="project-caption">Sample Content Calendar</span>
+                    <span class="project-desc">A weekly content calendar mapping out post themes, captions, and posting
+                        times.</span>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('smm2.jpg', true)">
+                        <img src="smm2.jpg" alt="Content Scheduling"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Content Scheduling</span>
+                    <span class="project-desc">A monthly planner for scheduling and managing posts across social
+                        platforms.</span>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('smm3.jpg', true)">
+                        <img src="smm3.jpg" alt="Content Strategy"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Content Strategy</span>
+                    <span class="project-desc">A strategic breakdown of content pillars designed to grow your audience
+                        and
+                        drive meaningful engagement.</span>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('smm4.jpg', true)">
+                        <img src="smm4.jpg" alt="Caption Writing"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Caption Writing</span>
+                    <span class="project-desc">A hook-and-body caption framework for writing captions that grab
+                        attention and
+                        keep readers engaged.</span>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('smm5.jpg', true)">
+                        <img src="smm5.jpg" alt="Hashtag Strategy"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Hashtag Strategy</span>
+                    <span class="project-desc">A hashtag strategy combining branded, niche, and broad tags to grow
+                        content
+                        reach.</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- GRAPHIC DESIGN -->
+        <div class="project-category">
+            <div class="category-header">
+                <div class="category-heading">
+                    <h2 class="category-title">Graphic Design</h2>
+                    <p class="category-desc">Creative and layout designs developed for digital and print use, with a
+                        focus on
+                        clear communication and visual consistency.</p>
+                </div>
+                <button class="view-all" onclick="toggleViewAll(this)">View all</button>
+            </div>
+            <div class="project-grid">
+
+                <div class="project-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('DONUT.png', false)">
+                        <img src="DONUT.png" alt="Donut Shop Logo"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Donut Shop Logo</span>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('TEA.png', false)">
+                        <img src="TEA.png" alt="Milk Tea Shop Logo"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Milk Tea Shop Logo</span>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('WATER.png', false)">
+                        <img src="WATER.png" alt="Water Station Logo"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Water Station Logo</span>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('logo_1.jpg', false)">
+                        <img src="logo_1.jpg" alt="Logo Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Logo Design</span>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('logo_2.jpg', false)">
+                        <img src="logo_2.jpg" alt="Logo Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Logo Design</span>
+                </div>
+
+                <!-- everything below is hidden until "View all" -->
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('logo_3.jpg', false)">
+                        <img src="logo_3.jpg" alt="Logo Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Logo Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g1.jpg', true)">
+                        <img src="g1.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g2.jpg', true)">
+                        <img src="g2.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g3.jpg', true)">
+                        <img src="g3.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g4.jpg', true)">
+                        <img src="g4.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g5.jpg', true)">
+                        <img src="g5.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g6.jpg', true)">
+                        <img src="g6.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g7.jpg', true)">
+                        <img src="g7.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g8.jpg', true)">
+                        <img src="g8.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g9.jpg', true)">
+                        <img src="g9.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g10.jpg', true)">
+                        <img src="g10.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g11.jpg', true)">
+                        <img src="g11.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g12.jpg', true)">
+                        <img src="g12.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g13.jpg', true)">
+                        <img src="g13.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g14.jpg', true)">
+                        <img src="g14.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g15.jpg', true)">
+                        <img src="g15.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g16.jpg', true)">
+                        <img src="g16.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('g17.jpg', true)">
+                        <img src="g17.jpg" alt="Graphic Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Graphic Design</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- WEB DESIGN & DEVELOPMENT -->
+        <div class="project-category">
+            <div class="category-header">
+                <div class="category-heading">
+                    <h2 class="category-title">Web Design & Development</h2>
+                    <p class="category-desc">Responsive website designs and frontend projects combining clean
+                        interfaces,
+                        practical layouts, and user-friendly functionality.</p>
+                </div>
+                <button class="view-all" onclick="toggleViewAll(this)">View all</button>
+            </div>
+            <div class="project-grid">
+
+                <div class="project-item ppt-item"
+                    data-slides='["system_1.png","system_2.png","system_3.png","system_4.png","system_5.png","system_6.png"]'>
+                    <div class="project-thumb clickable">
+                        <img class="ppt-thumb-img" src="system_1.png" alt="ToteBag Store website design"
+                            style="opacity:1;transition:opacity .4s ease;">
+                        <div class="ppt-thumb-dots"></div>
+                    </div>
+                    <span class="project-caption">ToteBag Store</span>
+                </div>
+
+                <div class="project-item ppt-item"
+                    data-slides='["web_agency1.png","web_agency2.png","web_agency3.png","web_agency4.png"]'>
+                    <div class="project-thumb clickable">
+                        <img class="ppt-thumb-img" src="web_agency1.png" alt="Agency website design"
+                            style="opacity:1;transition:opacity .4s ease;">
+                        <div class="ppt-thumb-dots"></div>
+                    </div>
+                    <span class="project-caption">Agency Website Design</span>
+                </div>
+
+                <div class="project-item ppt-item" data-slides='["web_start1.png","web_start2.png","web_start3.png"]'>
+                    <div class="project-thumb clickable">
+                        <img class="ppt-thumb-img" src="web_start1.png" alt="Startup website design"
+                            style="opacity:1;transition:opacity .4s ease;">
+                        <div class="ppt-thumb-dots"></div>
+                    </div>
+                    <span class="project-caption">Startup Website Design</span>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-thumb clickable"
+                        onclick="openSlidestrip(['web_1.png','web_2.png','web_3.png','web_4.png','web_5.png','web_6.png','web_7.png'])">
+                        <img src="web_1.png" alt="iLovah Cleaning Services website"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">iLovah Cleaning Services</span>
+                    <a href="https://www.ilovahcleaningservices.com.au" target="_blank" rel="noopener noreferrer"
+                        class="view-website-btn" onclick="event.stopPropagation()">🌐 View Website</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- MOBILE APP DESIGN & DEVELOPMENT -->
+        <div class="project-category">
+            <div class="category-header">
+                <div class="category-heading">
+                    <h2 class="category-title">Mobile App Design & Development</h2>
+                    <p class="category-desc">Mobile application interfaces designed with practical layouts, intuitive
+                        navigation, and a focus on user-friendly experiences.</p>
+                </div>
+                <button class="view-all" onclick="toggleViewAll(this)">View all</button>
+            </div>
+            <div class="project-grid">
+
+                <div class="project-item ppt-item" data-slides='["app_alarm1.png","app_alarm2.png","app_alarm3.png"]'>
+                    <div class="project-thumb clickable">
+                        <img class="ppt-thumb-img" src="app_alarm1.png" alt="Alarm app design"
+                            style="opacity:1;transition:opacity .4s ease;">
+                        <div class="ppt-thumb-dots"></div>
+                    </div>
+                    <span class="project-caption">Alarm App Design</span>
+                </div>
+
+                <div class="project-item ppt-item"
+                    data-slides='["app_event1.png","app_event2.png","app_event3.png","app_event4.png","app_event5.png","app_event6.png","app_event7.png","app_event8.jpg","app_event9.png"]'>
+                    <div class="project-thumb clickable">
+                        <img class="ppt-thumb-img" src="app_event1.png" alt="Event app design"
+                            style="opacity:1;transition:opacity .4s ease;">
+                        <div class="ppt-thumb-dots"></div>
+                    </div>
+                    <span class="project-caption">Event App Design</span>
+                </div>
+
+                <div class="project-item ppt-item"
+                    data-slides='["app_gal2.png","app_gal3.png","app_gal4.png","app_gal5.png","app_gal6.png","app_gal7.png","app_gal8.png","app_gal9.png","app_gal10.jpg","app_gal11.png","app_gal12.jpg","app_gal13.jpg","app_gal14.jpg","app_gal15.png","app_gal16.jpg"]'>
+                    <div class="project-thumb clickable">
+                        <img class="ppt-thumb-img" src="app_gal2.png" alt="Gallery app design"
+                            style="opacity:1;transition:opacity .4s ease;">
+                        <div class="ppt-thumb-dots"></div>
+                    </div>
+                    <span class="project-caption">Gallery App Design</span>
+                </div>
+
+                <div class="project-item ppt-item"
+                    data-slides='["app_med1.png","app_med2.png","app_med3.png","app_med4.png","app_med5.png","app_med6.png","app_med7.png"]'>
+                    <div class="project-thumb clickable">
+                        <img class="ppt-thumb-img" src="app_med1.png" alt="Medical app design"
+                            style="opacity:1;transition:opacity .4s ease;">
+                        <div class="ppt-thumb-dots"></div>
+                    </div>
+                    <span class="project-caption">Medical App Design</span>
+                </div>
+
+                <div class="project-item ppt-item"
+                    data-slides='["app_quick1.png","app_quick2.png","app_quick3.png","app_quick4.png","app_quick5.png"]'>
+                    <div class="project-thumb clickable">
+                        <img class="ppt-thumb-img" src="app_quick1.png" alt="Quick app design"
+                            style="opacity:1;transition:opacity .4s ease;">
+                        <div class="ppt-thumb-dots"></div>
+                    </div>
+                    <span class="project-caption">Quick App Design</span>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
-    <!-- ── PORTFOLIO ── -->
-    <section class="portfolio-section">
+    <footer>
+        <div class="footer-content">
+            <a href="index.html" class="footer-logo">
+                <img src="main_logo.jpg" alt="Abby Logo">
+            </a>
 
-        <!-- TABS -->
-        <div class="portfolio-tabs" id="tabs">
-            <button class="ptab" data-tab="webdesigns">Web Designs</button>
-            <button class="ptab" data-tab="appdesigns">Application Designs</button>
-            <button class="ptab" data-tab="website">Website</button>
-            <button class="ptab active" data-tab="logos">Logos</button>
-            <button class="ptab" data-tab="poster">Poster</button>
-            <button class="ptab" data-tab="menu">Simple Menu Design</button>
-            <button class="ptab" data-tab="ppt">Powerpoint Design</button>
-            <button class="ptab" data-tab="promo">Simple Promo Design</button>
-            <button class="ptab" data-tab="social">Story Templates</button>
-            
-        </div>
-
-        <!-- LOGOS PANEL -->
-        <div class="portfolio-panel active" id="panel-logos">
-            <div class="circle-grid">
-                <div class="circle-item" onclick="openLightbox('DONUT.png', false)">
-                    <div class="circle-ring">
-                        <div class="circle-wrap">
-                            <img src="DONUT.png" alt="Donut Shop Logo"
-                                onerror="this.style.display='none'; this.parentElement.innerHTML+='<div class=\'circle-art\' style=\'background:linear-gradient(135deg,#fff5f0,#ffe4d6)\'><div class=\'emoji\'>🍩</div><div class=\'sublabel\'>DONUT SHOP</div></div>';" />
-                        </div>
-                    </div>
-                    <span class="circle-label">Donut Shop Logo</span>
-                </div>
-                <div class="circle-item" onclick="openLightbox('TEA.png', false)">
-                    <div class="circle-ring">
-                        <div class="circle-wrap">
-                            <img src="TEA.png" alt="Milk Tea Shop Logo"
-                                onerror="this.style.display='none'; this.parentElement.innerHTML+='<div class=\'circle-art\' style=\'background:linear-gradient(135deg,#f0f9f4,#d4edda)\'><div class=\'emoji\'>🧋</div><div class=\'sublabel\'>MILK TEA</div></div>';" />
-                        </div>
-                    </div>
-                    <span class="circle-label">Milk Tea Shop Logo</span>
-                </div>
-                <div class="circle-item" onclick="openLightbox('WATER.png', false)">
-                    <div class="circle-ring">
-                        <div class="circle-wrap">
-                            <img src="WATER.png" alt="Water Station Logo"
-                                onerror="this.style.display='none'; this.parentElement.innerHTML+='<div class=\'circle-art\' style=\'background:linear-gradient(135deg,#e8f4fd,#cce5ff)\'><div class=\'emoji\'>💧</div><div class=\'sublabel\'>WATER STATION</div></div>';" />
-                        </div>
-                    </div>
-                    <span class="circle-label">Water Station Logo</span>
-                </div>
-                <div class="circle-item" onclick="openLightbox('logo_1.jpg', false)">
-                    <div class="circle-ring">
-                        <div class="circle-wrap">
-                            <img src="logo_1.jpg" alt="Logo 1"
-                                onerror="this.style.display='none'; this.parentElement.innerHTML+='<div class=\'circle-art\' style=\'background:linear-gradient(135deg,#f5f0ff,#e0d4f7)\'><div class=\'emoji\'>✨</div><div class=\'sublabel\'>LOGO</div></div>';" />
-                        </div>
-                    </div>
-                    <span class="circle-label">Logo Design</span>
-                </div>
-                <div class="circle-item" onclick="openLightbox('logo_2.jpg', false)">
-                    <div class="circle-ring">
-                        <div class="circle-wrap">
-                            <img src="logo_2.jpg" alt="Logo 2"
-                                onerror="this.style.display='none'; this.parentElement.innerHTML+='<div class=\'circle-art\' style=\'background:linear-gradient(135deg,#fff0f5,#f7d4e0)\'><div class=\'emoji\'>✨</div><div class=\'sublabel\'>LOGO</div></div>';" />
-                        </div>
-                    </div>
-                    <span class="circle-label">Logo Design</span>
-                </div>
-                <div class="circle-item" onclick="openLightbox('logo_3.jpg', false)">
-                    <div class="circle-ring">
-                        <div class="circle-wrap">
-                            <img src="logo_3.jpg" alt="Logo 3"
-                                onerror="this.style.display='none'; this.parentElement.innerHTML+='<div class=\'circle-art\' style=\'background:linear-gradient(135deg,#f0fff5,#d4f7e0)\'><div class=\'emoji\'>✨</div><div class=\'sublabel\'>LOGO</div></div>';" />
-                        </div>
-                    </div>
-                    <span class="circle-label">Logo Design</span>
-                </div>
+            <div class="footer-col">
+                <span class="footer-heading">Quick Links</span>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="certificates.html">Certificates</a></li>
+                    <li><a href="services.html">Tools</a></li>
+                    <li><a href="project.html" class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </div>
-        </div>
 
-        <!-- POSTER PANEL -->
-        <div class="portfolio-panel" id="panel-poster">
-            <div class="card-grid">
-                <div class="card-item" onclick="openLightbox('Poster1.png', true)">
-                    <div class="card-wrap">
-                        <img src="Poster1.png" alt="Travel App Poster"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>🖼️</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Coming Soon</div></div>';" />
+            <div class="footer-col">
+                <span class="footer-heading">Get in Touch</span>
+                <div class="footer-info">
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
+                        </svg>
+                        <span>Pangasinan, Philippines</span>
                     </div>
-                    <span class="card-label">Travel App Poster</span>
-                    <span class="card-desc">A promotional poster for a travel app, highlighting destinations and features with a bold, eye-catching design.</span>
+                    <a class="footer-contact-item" href="tel:+639766294511">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                        <span>+63 976 629 4511</span>
+                    </a>
                 </div>
-                <div class="card-item" onclick="openLightbox('Poster2.png', true)">
-                    <div class="card-wrap">
-                        <img src="Poster2.png" alt="Cybersecurity Poster"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>🖼️</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Coming Soon</div></div>';" />
-                    </div>
-                    <span class="card-label">Cybersecurity Poster</span>
-                    <span class="card-desc">An awareness poster on cybersecurity, designed with a tech-themed aesthetic to communicate online safety tips.</span>
-                </div>
-            </div>
-        </div>
 
-        <!-- MENU PANEL -->
-        <div class="portfolio-panel" id="panel-menu">
-            <div class="card-grid">
-                <div class="card-item" onclick="openLightbox('Menu.png', true)">
-                    <div class="card-wrap">
-                        <img src="Menu.png" alt="Coffee Menu"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>🖼️</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Coming Soon</div></div>';" />
-                    </div>
-                    <span class="card-label">Coffee Menu</span>
-                    <span class="card-desc">A stylish single-page coffee menu design with drink categories, prices, and a warm aesthetic.</span>
-                </div>
-                <div class="card-item" onclick="openLightbox('Menu2.png', true)">
-                    <div class="card-wrap">
-                        <img src="Menu2.png" alt="Food Menu"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>🖼️</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Coming Soon</div></div>';" />
-                    </div>
-                    <span class="card-label">Food Menu</span>
-                    <span class="card-desc">A clean and appetizing food menu layout with organized sections for meals, sides, and beverages.</span>
-                </div>
-                <div class="card-item" onclick="openLightbox('Menu3.png', true)">
-                    <div class="card-wrap">
-                        <img src="Menu3.png" alt="Ice Cream Menu"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>🖼️</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Coming Soon</div></div>';" />
-                    </div>
-                    <span class="card-label">Ice Cream Menu</span>
-                    <span class="card-desc">A fun and colorful ice cream shop menu featuring flavors, toppings, and pricing in a playful design.</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- PPT PANEL -->
-        <div class="portfolio-panel" id="panel-ppt">
-            <div class="card-grid">
-                <div class="card-item ppt-card-item"
-                    data-slides='["ppt1_1.png","ppt1_2.png","ppt1_3.png","ppt1_4.png","ppt1_5.png"]'>
-                    <div class="card-wrap ppt-card">
-                        <img class="ppt-thumb-img" src="ppt1_1.png" alt="PowerPoint slide"
-                            style="opacity:1;transition:opacity .4s ease;" />
-                        <div class="ppt-thumb-dots"></div>
-                    </div>
-                    <span class="card-label">PowerPoint Presentation</span>
-                    <span class="card-desc">A professionally designed slide deck with consistent layouts, icons, and visuals for impactful presentations.</span>
-                </div>
-                <div class="card-item ppt-card-item"
-                    data-slides='["ppt2_1.png","ppt2_2.png","ppt2_3.png","ppt2_4.png","ppt2_5.png"]'>
-                    <div class="card-wrap ppt-card">
-                        <img class="ppt-thumb-img" src="ppt2_1.png" alt="PowerPoint slide"
-                            style="opacity:1;transition:opacity .4s ease;" />
-                        <div class="ppt-thumb-dots"></div>
-                    </div>
-                    <span class="card-label">PowerPoint Presentation 2</span>
-                    <span class="card-desc">A second presentation template with a fresh color scheme and structured slides suited for business or academic use.</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- SOCIAL PANEL -->
-        <div class="portfolio-panel" id="panel-social">
-            <div class="card-grid">
-                <div class="card-item" onclick="openLightbox('social1.png', true)">
-                    <div class="card-wrap">
-                        <img src="social1.png" alt="Social Media Post"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>🖼️</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Coming Soon</div></div>';" />
-                    </div>
-                    <span class="card-label">Social Media Post</span>
-                    <span class="card-desc">A visually engaging social media graphic designed for promotions, announcements, or brand awareness.</span>
-                </div>
-                <div class="card-item" onclick="openLightbox('Instagram story - 1.png', true)">
-                    <div class="card-wrap">
-                        <img src="Instagram story - 1.png" alt="Instagram Story 1"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>📱</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Instagram Story</div></div>';" />
-                    </div>
-                    <span class="card-label">Instagram Story 1</span>
-                    <span class="card-desc">A vertical story template designed for Instagram, perfect for promotions, product highlights, or event announcements.</span>
-                </div>
-                <div class="card-item" onclick="openLightbox('Instagram story - 2.png', true)">
-                    <div class="card-wrap">
-                        <img src="Instagram story - 2.png" alt="Instagram Story 2"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>📱</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Instagram Story</div></div>';" />
-                    </div>
-                    <span class="card-label">Instagram Story 2</span>
-                    <span class="card-desc">A stylish story layout with bold typography and vibrant visuals to capture audience attention on Instagram.</span>
-                </div>
-                <div class="card-item" onclick="openLightbox('Instagram story - 3.png', true)">
-                    <div class="card-wrap">
-                        <img src="Instagram story - 3.png" alt="Instagram Story 3"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>📱</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Instagram Story</div></div>';" />
-                    </div>
-                    <span class="card-label">Instagram Story 3</span>
-                    <span class="card-desc">A clean and modern story template ideal for showcasing offers, new arrivals, or daily updates on social media.</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- PROMO PANEL -->
-        <div class="portfolio-panel" id="panel-promo">
-            <div class="card-grid">
-                <div class="card-item" onclick="openLightbox('Promo1.png', true)">
-                    <div class="card-wrap">
-                        <img src="Promo1.png" alt="Samgyupsal Promo"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>🖼️</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Coming Soon</div></div>';" />
-                    </div>
-                    <span class="card-label">Samgyupsal Promo</span>
-                    <span class="card-desc">A mouth-watering promo graphic for a Korean BBQ restaurant, designed to attract customers with a bold and appetizing layout.</span>
-                </div>
-                <div class="card-item" onclick="openLightbox('Promo2.png', true)">
-                    <div class="card-wrap">
-                        <img src="Promo2.png" alt="Coffee Shop Promo"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>🖼️</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Coming Soon</div></div>';" />
-                    </div>
-                    <span class="card-label">Coffee Shop Promo</span>
-                    <span class="card-desc">A warm and inviting promotional design for a coffee shop, highlighting special offers with an aesthetic café vibe.</span>
-                </div>
-                <div class="card-item" onclick="openLightbox('Promo3.png', true)">
-                    <div class="card-wrap">
-                        <img src="Promo3.png" alt="Chicken Inasal Promo"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>🖼️</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Coming Soon</div></div>';" />
-                    </div>
-                    <span class="card-label">Chicken Inasal Promo</span>
-                    <span class="card-desc">A vibrant promo flyer for a Filipino Chicken Inasal eatery, designed to highlight deals and draw in hungry customers.</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Web Designs PANEL -->
-        <div class="portfolio-panel" id="panel-webdesigns">
-            <div class="card-grid">
-                <div class="card-item ppt-card-item"
-                    data-slides='["system_1.png","system_2.png","system_3.png","system_4.png","system_5.png","system_6.png"]'>
-                    <div class="card-wrap ppt-card">
-                        <img class="ppt-thumb-img" src="system_1.png" alt="System slide"
-                            style="opacity:1;transition:opacity .4s ease;" />
-                        <div class="ppt-thumb-dots"></div>
-                    </div>
-                    <span class="card-label">ToteBag Store</span>
-                    <span class="card-desc">An e-commerce web design for a tote bag shop featuring product listings, clean layout, and easy navigation.</span>
-                </div>
-                <div class="card-item ppt-card-item"
-                    data-slides='["web_agency1.png","web_agency2.png","web_agency3.png","web_agency4.png"]'>
-                    <div class="card-wrap ppt-card">
-                        <img class="ppt-thumb-img" src="web_agency1.png" alt="Agency Website"
-                            style="opacity:1;transition:opacity .4s ease;"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>🌐</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Agency Website</div></div>';" />
-                        <div class="ppt-thumb-dots"></div>
-                    </div>
-                    <span class="card-label">Agency Website Design</span>
-                    <span class="card-desc">A modern creative agency website showcasing services, portfolio, and contact sections with a professional look.</span>
-                </div>
-                <div class="card-item ppt-card-item"
-                    data-slides='["web_start1.png","web_start2.png","web_start3.png"]'>
-                    <div class="card-wrap ppt-card">
-                        <img class="ppt-thumb-img" src="web_start1.png" alt="Startup Website"
-                            style="opacity:1;transition:opacity .4s ease;"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>🚀</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Startup Website</div></div>';" />
-                        <div class="ppt-thumb-dots"></div>
-                    </div>
-                    <span class="card-label">Startup Website Design</span>
-                    <span class="card-desc">A clean and minimal landing page design for a startup, highlighting key features and a strong call-to-action.</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Application Designs PANEL -->
-        <div class="portfolio-panel" id="panel-appdesigns">
-            <div class="card-grid">
-                <div class="card-item ppt-card-item"
-                    data-slides='["app_alarm1.png","app_alarm2.png","app_alarm3.png"]'>
-                    <div class="card-wrap ppt-card">
-                        <img class="ppt-thumb-img" src="app_alarm1.png" alt="Alarm App"
-                            style="opacity:1;transition:opacity .4s ease;"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>⏰</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Alarm App</div></div>';" />
-                        <div class="ppt-thumb-dots"></div>
-                    </div>
-                    <span class="card-label">Alarm App Design</span>
-                    <span class="card-desc">A sleek mobile alarm app UI with time-setting controls, snooze options, and a minimal dark-themed interface.</span>
-                </div>
-                <div class="card-item ppt-card-item"
-                    data-slides='["app_event1.png","app_event2.png","app_event3.png","app_event4.png","app_event5.png","app_event6.png","app_event7.png","app_event8.jpg","app_event9.png"]'>
-                    <div class="card-wrap ppt-card">
-                        <img class="ppt-thumb-img" src="app_event1.png" alt="Event App"
-                            style="opacity:1;transition:opacity .4s ease;"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>📅</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Event App</div></div>';" />
-                        <div class="ppt-thumb-dots"></div>
-                    </div>
-                    <span class="card-label">Event App Design</span>
-                    <span class="card-desc">A mobile app for discovering and managing events, featuring event listings, booking, and schedule views.</span>
-                </div>
-                <div class="card-item ppt-card-item"
-                    data-slides='["app_gal2.png","app_gal3.png","app_gal4.png","app_gal5.png","app_gal6.png","app_gal7.png","app_gal8.png","app_gal9.png","app_gal10.jpg","app_gal11.png","app_gal12.jpg","app_gal13.jpg","app_gal14.jpg","app_gal15.png","app_gal16.jpg"]'>
-                    <div class="card-wrap ppt-card">
-                        <img class="ppt-thumb-img" src="app_gal2.png" alt="Gallery App"
-                            style="opacity:1;transition:opacity .4s ease;"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>🖼️</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Gallery App</div></div>';" />
-                        <div class="ppt-thumb-dots"></div>
-                    </div>
-                    <span class="card-label">Gallery App Design</span>
-                    <span class="card-desc">A photo gallery app UI with organized albums, smooth image browsing, and a clean modern visual style.</span>
-                </div>
-                <div class="card-item ppt-card-item"
-                    data-slides='["app_med1.png","app_med2.png","app_med3.png","app_med4.png","app_med5.png","app_med6.png","app_med7.png"]'>
-                    <div class="card-wrap ppt-card">
-                        <img class="ppt-thumb-img" src="app_med1.png" alt="Medical App"
-                            style="opacity:1;transition:opacity .4s ease;"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>🏥</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Medical App</div></div>';" />
-                        <div class="ppt-thumb-dots"></div>
-                    </div>
-                    <span class="card-label">Medical App Design</span>
-                    <span class="card-desc">A healthcare mobile app for appointment booking, patient records, and doctor consultations with a calm UI.</span>
-                </div>
-                <div class="card-item ppt-card-item"
-                    data-slides='["app_quick1.png","app_quick2.png","app_quick3.png","app_quick4.png","app_quick5.png"]'>
-                    <div class="card-wrap ppt-card">
-                        <img class="ppt-thumb-img" src="app_quick1.png" alt="Quick App"
-                            style="opacity:1;transition:opacity .4s ease;"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>⚡</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>Quick App</div></div>';" />
-                        <div class="ppt-thumb-dots"></div>
-                    </div>
-                    <span class="card-label">Quick App Design</span>
-                    <span class="card-desc">A fast and intuitive utility app designed for quick access to everyday tasks with a simple, distraction-free layout.</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- WEBSITE PANEL -->
-        <div class="portfolio-panel" id="panel-website">
-            <div class="card-grid">
-                <div class="card-item" style="cursor:default;">
-                    <div class="card-wrap"
-                        onclick="openSlidestrip(['web_1.png','web_2.png','web_3.png','web_4.png','web_5.png','web_6.png','web_7.png'])"
-                        style="cursor:pointer;">
-                        <img src="web_1.png" alt="iLovah Cleaning Services Website"
-                            style="width:100%;height:auto;display:block;object-fit:contain;"
-                            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'card-placeholder\'><div style=\'font-size:1.6rem\'>🌐</div><div style=\'font-size:.62rem;color:#8fa3b1;font-weight:600;letter-spacing:.06em\'>iLovah Cleaning Services</div></div>';" />
-                    </div>
-                    <span class="card-label">iLovah Cleaning Services</span>
-                    <span class="card-desc">A professional website for a cleaning services company in Australia, featuring service offerings, booking info, and contact details.</span>
-                    <a href="https://www.ilovahcleaningservices.com.au" target="_blank" rel="noopener noreferrer"
-                        class="view-website-btn">
-                        🌐 View Website
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/172Eoh1SG1/?mibextid=wwXIfr" target="_blank" rel="noopener"
+                        aria-label="Facebook">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/abegail-ramiro/" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/pixora_ph/" target="_blank" rel="noopener"
+                        aria-label="Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
                     </a>
                 </div>
             </div>
         </div>
 
-    </section>
-
-   <footer>
-    <p class="footer-text">&copy; 2026 <a href="index.html">Abegail</a> All Rights Reserved , Inc.</p>
-  </footer>
+        <div class="footer-bottom">
+            <p class="footer-text">&copy; 2026 All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <!-- ── IMAGE LIGHTBOX ── -->
     <div class="img-lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
         <div class="img-lightbox-inner" id="lightbox-inner">
             <button class="img-lightbox-close" onclick="closeLightbox()">✕</button>
-            <img id="lightbox-img" src="" alt="Full Preview" onerror="showLightboxFailed()" />
+            <img id="lightbox-img" src="" alt="Full Preview" />
         </div>
     </div>
 
@@ -1386,29 +1403,22 @@
     </div>
 
     <script>
-        // ── NAV scroll shadow
-        window.addEventListener('scroll', () => {
-            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
-        });
-
         // ── HAMBURGER MENU
         function toggleMenu() { document.getElementById('navMenu').classList.toggle('open'); }
 
-        // ── TABS
-        document.querySelectorAll('.ptab').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
-                document.querySelectorAll('.portfolio-panel').forEach(p => p.classList.remove('active'));
-                btn.classList.add('active');
-                document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
-            });
-        });
+        // ── VIEW ALL TOGGLE
+        function toggleViewAll(btn) {
+            const grid = btn.closest('.project-category').querySelector('.project-grid');
+            const isShown = grid.classList.toggle('show-all');
+            btn.textContent = isShown ? 'View less' : 'View all';
+        }
 
-        // ── PPT THUMBNAIL CAROUSEL
-        document.querySelectorAll('.ppt-card-item').forEach(card => {
-            const slides = JSON.parse(card.dataset.slides);
-            const img = card.querySelector('.ppt-thumb-img');
-            const dotsEl = card.querySelector('.ppt-thumb-dots');
+        // ── PPT / CAROUSEL THUMBNAIL AUTO-CYCLE
+        document.querySelectorAll('.ppt-item').forEach(item => {
+            const slides = JSON.parse(item.dataset.slides);
+            const thumb = item.querySelector('.project-thumb');
+            const img = item.querySelector('.ppt-thumb-img');
+            const dotsEl = item.querySelector('.ppt-thumb-dots');
             let idx = 0;
 
             slides.forEach((_, i) => {
@@ -1433,7 +1443,7 @@
                 }, 400);
             }, 2000);
 
-            card.addEventListener('click', () => openSlidestrip(slides));
+            thumb.addEventListener('click', () => openSlidestrip(slides));
         });
 
         // ── IMAGE LIGHTBOX
@@ -1451,19 +1461,6 @@
             document.getElementById('lightbox').classList.remove('open');
             document.body.style.overflow = '';
         }
-        function showLightboxFailed() {
-            const img = document.getElementById('lightbox-img');
-            img.style.display = 'none';
-            const inner = document.getElementById('lightbox-inner');
-            if (!inner.querySelector('.lb-failed')) {
-                const d = document.createElement('div');
-                d.className = 'lb-failed';
-                d.style.cssText = 'width:400px;max-width:90vw;background:#1a2b4a;border-radius:16px;padding:60px 40px;text-align:center;color:#fff;';
-                d.innerHTML = '<div style="font-size:3rem;margin-bottom:16px">🖼</div><div style="font-family:\'Playfair Display\',serif;font-size:1.3rem;font-weight:900;margin-bottom:8px">Coming Soon</div><div style="font-size:.85rem;color:rgba(255,255,255,.5)">Image will be added soon</div>';
-                inner.appendChild(d);
-            }
-        }
-
         // ── SLIDE-STRIP
         let ssSlides = [], ssIdx = 0, ssAnimating = false, ssAuto = null, ssPaused = false;
         let ssTouchStartX = null, ssTouchStartY = null;
