@@ -137,7 +137,7 @@
     .hero {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       min-height: calc(100vh - 90px);
       padding: 90px 80px 60px;
       gap: 60px;
@@ -145,7 +145,7 @@
 
     /* LEFT */
     .hero-left {
-      flex: 0 0 54%;
+      flex: 0 1 640px;
       max-width: 640px;
     }
 
@@ -230,7 +230,7 @@
 
     /* RIGHT */
     .hero-right {
-      flex: 0 0 48%;
+      flex: 0 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -257,6 +257,11 @@
       .hero {
         padding: 60px 40px;
         gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      .hero-left {
+        flex: 1 1 320px;
       }
 
       .photo-wrap {
@@ -493,7 +498,7 @@
 
   <nav>
     <a href="#" class="logo">
-      <img src="main_logo.jpg" alt="Abby Logo" class="logo-icon">
+      <img src="main_logo.png" alt="Abby Logo" class="logo-icon">
     </a>
 
     <div class="hamburger" onclick="toggleMenu()">

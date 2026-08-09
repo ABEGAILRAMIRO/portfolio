@@ -739,6 +739,10 @@
                 flex-direction: column;
             }
 
+            .view-all {
+                align-self: flex-end;
+            }
+
             .category-title {
                 font-size: 24px;
             }
@@ -897,7 +901,7 @@
 
     <nav>
         <a href="index.html" class="logo">
-            <img src="main_logo.jpg" alt="Abby Logo" class="logo-icon">
+            <img src="main_logo.png" alt="Abby Logo" class="logo-icon">
         </a>
 
         <div class="hamburger" onclick="toggleMenu()">
@@ -907,6 +911,7 @@
         <ul class="nav-links" id="navMenu">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Me</a></li>
+            <li><a href="certificates.html">Certificates</a></li>
             <li><a href="services.html">Tools</a></li>
             <li><a href="project.html" class="active">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -998,56 +1003,6 @@
             <div class="project-grid">
 
                 <div class="project-item">
-                    <div class="project-thumb clickable" onclick="openLightbox('DONUT.png', false)">
-                        <img src="DONUT.png" alt="Donut Shop Logo"
-                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
-                    </div>
-                    <span class="project-caption">Donut Shop Logo</span>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-thumb clickable" onclick="openLightbox('TEA.png', false)">
-                        <img src="TEA.png" alt="Milk Tea Shop Logo"
-                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
-                    </div>
-                    <span class="project-caption">Milk Tea Shop Logo</span>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-thumb clickable" onclick="openLightbox('WATER.png', false)">
-                        <img src="WATER.png" alt="Water Station Logo"
-                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
-                    </div>
-                    <span class="project-caption">Water Station Logo</span>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-thumb clickable" onclick="openLightbox('logo_1.jpg', false)">
-                        <img src="logo_1.jpg" alt="Logo Design"
-                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
-                    </div>
-                    <span class="project-caption">Logo Design</span>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-thumb clickable" onclick="openLightbox('logo_2.jpg', false)">
-                        <img src="logo_2.jpg" alt="Logo Design"
-                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
-                    </div>
-                    <span class="project-caption">Logo Design</span>
-                </div>
-
-                <!-- everything below is hidden until "View all" -->
-
-                <div class="project-item extra-item">
-                    <div class="project-thumb clickable" onclick="openLightbox('logo_3.jpg', false)">
-                        <img src="logo_3.jpg" alt="Logo Design"
-                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
-                    </div>
-                    <span class="project-caption">Logo Design</span>
-                </div>
-
-                <div class="project-item extra-item">
                     <div class="project-thumb clickable" onclick="openLightbox('g1.jpg', true)">
                         <img src="g1.jpg" alt="Graphic Design"
                             onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
@@ -1055,7 +1010,7 @@
                     <span class="project-caption">Graphic Design</span>
                 </div>
 
-                <div class="project-item extra-item">
+                <div class="project-item">
                     <div class="project-thumb clickable" onclick="openLightbox('g2.jpg', true)">
                         <img src="g2.jpg" alt="Graphic Design"
                             onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
@@ -1063,7 +1018,7 @@
                     <span class="project-caption">Graphic Design</span>
                 </div>
 
-                <div class="project-item extra-item">
+                <div class="project-item">
                     <div class="project-thumb clickable" onclick="openLightbox('g3.jpg', true)">
                         <img src="g3.jpg" alt="Graphic Design"
                             onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
@@ -1071,7 +1026,7 @@
                     <span class="project-caption">Graphic Design</span>
                 </div>
 
-                <div class="project-item extra-item">
+                <div class="project-item">
                     <div class="project-thumb clickable" onclick="openLightbox('g4.jpg', true)">
                         <img src="g4.jpg" alt="Graphic Design"
                             onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
@@ -1079,7 +1034,7 @@
                     <span class="project-caption">Graphic Design</span>
                 </div>
 
-                <div class="project-item extra-item">
+                <div class="project-item">
                     <div class="project-thumb clickable" onclick="openLightbox('g5.jpg', true)">
                         <img src="g5.jpg" alt="Graphic Design"
                             onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
@@ -1087,7 +1042,7 @@
                     <span class="project-caption">Graphic Design</span>
                 </div>
 
-                <div class="project-item extra-item">
+                <div class="project-item">
                     <div class="project-thumb clickable" onclick="openLightbox('g6.jpg', true)">
                         <img src="g6.jpg" alt="Graphic Design"
                             onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
@@ -1095,7 +1050,7 @@
                     <span class="project-caption">Graphic Design</span>
                 </div>
 
-                <div class="project-item extra-item">
+                <div class="project-item">
                     <div class="project-thumb clickable" onclick="openLightbox('g7.jpg', true)">
                         <img src="g7.jpg" alt="Graphic Design"
                             onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
@@ -1103,13 +1058,15 @@
                     <span class="project-caption">Graphic Design</span>
                 </div>
 
-                <div class="project-item extra-item">
+                <div class="project-item">
                     <div class="project-thumb clickable" onclick="openLightbox('g8.jpg', true)">
                         <img src="g8.jpg" alt="Graphic Design"
                             onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
                     </div>
                     <span class="project-caption">Graphic Design</span>
                 </div>
+
+                <!-- everything below is hidden until "View all" -->
 
                 <div class="project-item extra-item">
                     <div class="project-thumb clickable" onclick="openLightbox('g9.jpg', true)">
@@ -1181,6 +1138,54 @@
                             onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
                     </div>
                     <span class="project-caption">Graphic Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('DONUT.png', false)">
+                        <img src="DONUT.png" alt="Donut Shop Logo"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Donut Shop Logo</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('TEA.png', false)">
+                        <img src="TEA.png" alt="Milk Tea Shop Logo"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Milk Tea Shop Logo</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('WATER.png', false)">
+                        <img src="WATER.png" alt="Water Station Logo"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Water Station Logo</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('logo_1.jpg', false)">
+                        <img src="logo_1.jpg" alt="Logo Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Logo Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('logo_2.jpg', false)">
+                        <img src="logo_2.jpg" alt="Logo Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Logo Design</span>
+                </div>
+
+                <div class="project-item extra-item">
+                    <div class="project-thumb clickable" onclick="openLightbox('logo_3.jpg', false)">
+                        <img src="logo_3.jpg" alt="Logo Design"
+                            onerror="this.parentElement.classList.remove('clickable'); this.parentElement.classList.add('empty'); this.remove();">
+                    </div>
+                    <span class="project-caption">Logo Design</span>
                 </div>
 
             </div>
@@ -1311,7 +1316,7 @@
     <footer>
         <div class="footer-content">
             <a href="index.html" class="footer-logo">
-                <img src="main_logo.jpg" alt="Abby Logo">
+                <img src="footer-logo.png" alt="Abby Logo">
             </a>
 
             <div class="footer-col">
